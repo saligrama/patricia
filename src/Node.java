@@ -128,24 +128,20 @@ public class Node
 	// search for a string within the tree
 	public boolean findChild (int[] _toSearch, OperationLogger _opLog)
 	{
-		if (_toSearch.length == forkIndex + 1 && terminates != null) {
-			// if the string to be searched has length equal to a string terminating here,
-			// compare the strings and return their equality
-			_opLog.incComparisons(_toSearch.length);
-			return Arrays.equals(_toSearch, terminates.get(_toSearch[forkIndex]));
-		} else if (_toSearch.length > forkIndex + 1) {
-			// if the string's length is greater than forkIndex, recursively search
-			// the relevant subnode
-			if (children[_toSearch[forkIndex]] == null) {
-				return false;
-			} else {
-				_opLog.incTraversals(1);
-				children[_toSearch[forkIndex]].findChild(_toSearch, _opLog);
+		// locateRemoveChild finds a proper child to compare with, so we use it here
+		Node toCompare = locateRemoveChild(_toSearch, _opLog);
+		int[] comp = firstNotNull(toCompare.terminates);
+		if (comp == null || comp.length != _toSearch.length) {
+			return false;
+		} else {
+			// manually do this instead of using Arrays.equals() to represent number of comparisons properly
+			for (int j = 0; j < _toSearch.length; j++) {
+				_opLog.incComparisons(1);
+				if (_toSearch[j] != comp[j])
+					return false;
 			}
 		}
-
-		// if the search string's length is shorter than forkIndex, then it is not in the tree
-		return false;
+		return true;
 	}
 
 	// add a string to the tree

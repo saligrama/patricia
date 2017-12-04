@@ -1,5 +1,5 @@
 /*
-  Provides CPU (traversal and comparison) time and memory usage functionality for a single operation
+	Provides CPU (traversal and comparison) time and memory usage functionality for a single operation
 	@author Aditya Saligrama
 	@since  2017-11-25
 */
