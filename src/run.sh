@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# PROBLEM 11
 # This is a simple run script for the PatriciaTree
 
 echo "Compiling Constants.java"
