@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.saligrama.util;
+package io.github.saligrama.patricia;
 
 import java.util.List;
 import java.util.ArrayList;

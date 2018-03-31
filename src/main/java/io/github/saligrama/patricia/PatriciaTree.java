@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.saligrama.util;
+package io.github.saligrama.patricia;
 
 /**
  * PatriciaTree is a bit-alphabet based, space-optimized trie for string storage.

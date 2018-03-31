@@ -1,6 +1,6 @@
-# PatriciaTree
+# patricia
 
-PatriciaTree is a bit-alphabet based, space-optimized trie for string storage.
+Patricia is a bit-alphabet based, space-optimized trie for string storage.
 
 Patricia Trees (also known as Crit-Bit Trees and Compressed Binary Trees) are
 extremely space-efficient compared to standard tries due to their compression
