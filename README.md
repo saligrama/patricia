@@ -13,7 +13,7 @@ text. It operates similarly to a Radix Tree, with radix r=2.
 To use, simply include the library in your source code and call the functions as below.
 
 ```java
-import io.github.saligrama.util.PatriciaTree;
+import io.github.saligrama.patricia.PatriciaTree;
 
 public class PatriciaTest {
     public static void main(String[] args) {
