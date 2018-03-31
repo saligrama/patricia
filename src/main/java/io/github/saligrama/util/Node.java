@@ -37,8 +37,7 @@ import java.util.Arrays;
  *
  * @author Aditya Saligrama
  */
-class Node
-{
+class Node {
 	// index of first difference between left and right child
 	private int forkIndex;
 

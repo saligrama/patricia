@@ -25,8 +25,7 @@ package io.github.saligrama.util;
 /**
  * @author Aditya Saligrama
  */
-class Constants
-{
+class Constants {
 	// for Utils: converting from string to bit array and vice versa
 	protected static final int UTILS_CHAR_BITLEN = 8;
 	protected static final int[] UTILS_BITSET = new int[]{128, 64, 32, 16, 8, 4, 2, 1};

@@ -35,8 +35,7 @@ package io.github.saligrama.util;
  *
  * @author Aditya Saligrama
  */
-public class PatriciaTree
-{
+public class PatriciaTree {
 	private int size;
 	private Node root;
 
