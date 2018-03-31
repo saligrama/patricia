@@ -24,6 +24,7 @@ package io.github.saligrama.patricia;
 
 /**
  * @author Aditya Saligrama
+ * @version 1.0
  */
 class Constants {
 	// for Utils: converting from string to bit array and vice versa

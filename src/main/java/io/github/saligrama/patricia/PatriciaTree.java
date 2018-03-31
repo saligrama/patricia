@@ -34,6 +34,7 @@ package io.github.saligrama.patricia;
  * text. It operates similarly to a Radix Tree, with radix r=2.
  *
  * @author Aditya Saligrama
+ * @version 1.0
  */
 public class PatriciaTree {
 	private int size;

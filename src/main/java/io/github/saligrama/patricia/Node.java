@@ -36,6 +36,7 @@ import java.util.Arrays;
  * removal of a string in order to make sure no redundant nodes are being stored.
  *
  * @author Aditya Saligrama
+ * @version 1.0
  */
 class Node {
 	// index of first difference between left and right child

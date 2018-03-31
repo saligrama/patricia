@@ -24,11 +24,12 @@ package io.github.saligrama.patricia;
 
 /**
  * @author Aditya Saligrama
+ * @version 1.0
  */
 class Utils {
 
 	/**
-	 * Greedily convert string to contiguous array of 5 bits.
+	 * Greedily convert string to contiguous array of 8 bits (or whatever is defined in Constants.UTILS_CHAR_BITLEN).
 	 *
 	 * @param _str string to convert to bit array
 	 * @return bit array representation of _str
