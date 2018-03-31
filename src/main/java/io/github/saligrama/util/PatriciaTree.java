@@ -31,7 +31,7 @@ package io.github.saligrama.util;
  * stored, cutting down on both storage and in steps needed to traverse the trie.
  *
  * This PatriciaTree operates on a bit alphabet and can store any type of ASCII
- * text. It operates similar to a Radix Tree, with radix r=2.
+ * text. It operates similarly to a Radix Tree, with radix r=2.
  *
  * @author Aditya Saligrama
  */
