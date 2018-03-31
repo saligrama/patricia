@@ -71,7 +71,7 @@ public class PatriciaTree
 	 * @param _toAdd string to add to the tree
 	 * @return true if the tree was modified (i.e. _toAdd did not already exist in the tree), false otherwise
 	 */
-	public boolean add(String _toAdd)	{
+	public boolean add(String _toAdd) {
 		boolean ret = root.addChild(Utils.strToBitArr(_toAdd));
 		if (ret)
 			size++;
@@ -95,7 +95,7 @@ public class PatriciaTree
 	 * @return string representation of the tree
 	 */
 	@Override
-	public String toString()	{
+	public String toString() {
 		String ret = root.toString();
 		return "[" + ret.substring(0, ret.length() - 2) + "]";
 	}

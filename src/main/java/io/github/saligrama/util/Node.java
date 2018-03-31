@@ -275,8 +275,7 @@ class Node
 	 * @param _terminates a terminates list
 	 * @return first non-null bit array in _terminates
 	 */
-	private int[] firstNotNull(List<int[]> _terminates)
-	{
+	private int[] firstNotNull(List<int[]> _terminates) {
 		for (int[] i : _terminates) {
 			if (i != null)
 				return i;
