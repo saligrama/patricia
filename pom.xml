@@ -25,15 +25,15 @@
     <developerConnection>scm:git:git@github.com:saligrama/patricia.git</developerConnection>
   </scm>
 
-	<developers>
-		<developer>
-			<email>saligrama427@gmail.com</email>
-			<name>Aditya Saligrama</name>
-			<url>https://github.com/saligrama/</url>
-			<id>saligrama</id>
+  <developers>
+    <developer>
+      <email>saligrama427@gmail.com</email>
+      <name>Aditya Saligrama</name>
+      <url>https://github.com/saligrama/</url>
+      <id>saligrama</id>
       <timezone>America/New_York</timezone>
-		</developer>
-	</developers>
+    </developer>
+  </developers>
 
   <distributionManagement>
     <snapshotRepository>
