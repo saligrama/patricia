@@ -28,52 +28,52 @@ package io.github.saligrama.patricia;
  */
 class Utils {
 
-	/**
-	 * Greedily convert string to contiguous array of 8 bits (or whatever is defined in Constants.UTILS_CHAR_BITLEN).
-	 *
-	 * @param _str string to convert to bit array
-	 * @return bit array representation of _str
-	 */
-	public static int[] strToBitArr(String _str) {
-		int[] ret = new int[_str.length() * Constants.UTILS_CHAR_BITLEN];
+  /**
+   * Greedily convert string to contiguous array of 8 bits (or whatever is defined in
+   * Constants.UTILS_CHAR_BITLEN).
+   *
+   * @param _str string to convert to bit array
+   * @return bit array representation of _str
+   */
+  public static int[] strToBitArr(String _str) {
+    int[] ret = new int[_str.length() * Constants.UTILS_CHAR_BITLEN];
 
-		for (int i = 0; i < _str.length(); i++) {
-			int asciiConvert = ((int) _str.charAt(i));
-			int ndx = i * Constants.UTILS_CHAR_BITLEN;
-			for (int j = 0; j < Constants.UTILS_CHAR_BITLEN; j++) {
-				if (asciiConvert >= Constants.UTILS_BITSET[j]) {
-					asciiConvert -= Constants.UTILS_BITSET[j];
-					ret[ndx + j] = 1;
-				}
-			}
-		}
+    for (int i = 0; i < _str.length(); i++) {
+      int asciiConvert = ((int) _str.charAt(i));
+      int ndx = i * Constants.UTILS_CHAR_BITLEN;
+      for (int j = 0; j < Constants.UTILS_CHAR_BITLEN; j++) {
+        if (asciiConvert >= Constants.UTILS_BITSET[j]) {
+          asciiConvert -= Constants.UTILS_BITSET[j];
+          ret[ndx + j] = 1;
+        }
+      }
+    }
 
-		return ret;
-	}
+    return ret;
+  }
 
-	/**
-	 * Convert bit array back to string
-	 *
-	 * @param _bits bit array to convert to string
-	 * @return string representation of _bits
-	 */
-	public static String bitArrToStr(int[] _bits) {
-		// bit array should be a concatenation of bit representations of characters of a set length
-		assert _bits.length % Constants.UTILS_CHAR_BITLEN == 0;
+  /**
+   * Convert bit array back to string
+   *
+   * @param _bits bit array to convert to string
+   * @return string representation of _bits
+   */
+  public static String bitArrToStr(int[] _bits) {
+    // bit array should be a concatenation of bit representations of characters of a set length
+    assert _bits.length % Constants.UTILS_CHAR_BITLEN == 0;
 
-		String ret = "";
-		int next = 0;
-		for (int i = 0; i < _bits.length; i++) {
-			if (i > 0 && i % Constants.UTILS_CHAR_BITLEN == 0) {
-				ret += Character.toString((char) next);
-				next = 0;
-			}
+    String ret = "";
+    int next = 0;
+    for (int i = 0; i < _bits.length; i++) {
+      if (i > 0 && i % Constants.UTILS_CHAR_BITLEN == 0) {
+        ret += Character.toString((char) next);
+        next = 0;
+      }
 
-			if (_bits[i] == 1)
-				next += Constants.UTILS_BITSET[i % Constants.UTILS_CHAR_BITLEN];
-		}
+      if (_bits[i] == 1) next += Constants.UTILS_BITSET[i % Constants.UTILS_CHAR_BITLEN];
+    }
 
-		// account for last char
-		return ret + Character.toString((char) next);
-	}
+    // account for last char
+    return ret + Character.toString((char) next);
+  }
 }

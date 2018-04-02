@@ -25,78 +25,71 @@ package io.github.saligrama.patricia;
 /**
  * PatriciaTree is a bit-alphabet based, space-optimized trie for string storage.
  *
- * Patricia Trees (also known as Crit-Bit Trees and Compressed Binary Trees) are
- * extremely space-efficient compared to standard tries due to their compression
- * of nodes with only one child. Therefore, no unnecessary nodes and edges are
- * stored, cutting down on both storage and in steps needed to traverse the trie.
+ * <p>Patricia Trees (also known as Crit-Bit Trees and Compressed Binary Trees) are extremely
+ * space-efficient compared to standard tries due to their compression of nodes with only one child.
+ * Therefore, no unnecessary nodes and edges are stored, cutting down on both storage and in steps
+ * needed to traverse the trie.
  *
- * This PatriciaTree operates on a bit alphabet and can store any type of ASCII
- * text. It operates similarly to a Radix Tree, with radix r=2.
+ * <p>This PatriciaTree operates on a bit alphabet and can store any type of ASCII text. It operates
+ * similarly to a Radix Tree, with radix r=2.
  *
  * @author Aditya Saligrama
  * @version 1.0
  */
 public class PatriciaTree {
-	private int size;
-	private Node root;
+  private int size;
+  private Node root;
 
-	/**
-	 * Construct a new PatriciaTree.
-	 */
-	public PatriciaTree() {
-		root = new Node(0, null);
-		size = 0;
-	}
+  /** Construct a new PatriciaTree. */
+  public PatriciaTree() {
+    root = new Node(0, null);
+    size = 0;
+  }
 
-	/**
-	 * @return size of the tree.
-	 */
-	public int size() {
-		return size;
-	}
+  /** @return size of the tree. */
+  public int size() {
+    return size;
+  }
 
-	/**
-	 * Check if a string exists in the tree.
-	 *
-	 * @param _toSearch string to search for within the tree
-	 * @return true if _toAdd exists in the tree, false if it does not
-	 */
-	public boolean contains(String _toSearch) {
-		return root.findChild(Utils.strToBitArr(_toSearch));
-	}
+  /**
+   * Check if a string exists in the tree.
+   *
+   * @param _toSearch string to search for within the tree
+   * @return true if _toAdd exists in the tree, false if it does not
+   */
+  public boolean contains(String _toSearch) {
+    return root.findChild(Utils.strToBitArr(_toSearch));
+  }
 
-	/**
-	 * Add a string to the tree.
-	 *
-	 * @param _toAdd string to add to the tree
-	 * @return true if the tree was modified (i.e. _toAdd did not already exist in the tree), false otherwise
-	 */
-	public boolean add(String _toAdd) {
-		boolean ret = root.addChild(Utils.strToBitArr(_toAdd));
-		if (ret)
-			size++;
-		return ret;
-	}
+  /**
+   * Add a string to the tree.
+   *
+   * @param _toAdd string to add to the tree
+   * @return true if the tree was modified (i.e. _toAdd did not already exist in the tree), false
+   *     otherwise
+   */
+  public boolean add(String _toAdd) {
+    boolean ret = root.addChild(Utils.strToBitArr(_toAdd));
+    if (ret) size++;
+    return ret;
+  }
 
-	/**
-	 * Remove a string from the tree.
-	 *
-	 * @param _toRemove string to remove from the tree
-	 * @return true if the tree was modified (i.e. _toRemove was in the tree), false otherwise
-	 */
-	public boolean remove(String _toRemove) {
-		boolean ret = root.removeChild(Utils.strToBitArr(_toRemove));
-		if (ret)
-			size--;
-		return ret;
-	}
+  /**
+   * Remove a string from the tree.
+   *
+   * @param _toRemove string to remove from the tree
+   * @return true if the tree was modified (i.e. _toRemove was in the tree), false otherwise
+   */
+  public boolean remove(String _toRemove) {
+    boolean ret = root.removeChild(Utils.strToBitArr(_toRemove));
+    if (ret) size--;
+    return ret;
+  }
 
-	/**
-	 * @return string representation of the tree
-	 */
-	@Override
-	public String toString() {
-		String ret = root.toString();
-		return "[" + ret.substring(0, ret.length() - 2) + "]";
-	}
+  /** @return string representation of the tree */
+  @Override
+  public String toString() {
+    String ret = root.toString();
+    return "[" + ret.substring(0, ret.length() - 2) + "]";
+  }
 }
