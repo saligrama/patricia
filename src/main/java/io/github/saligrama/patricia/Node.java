@@ -101,11 +101,7 @@ class Node {
 		if (comp == null || comp.length != _toSearch.length) {
 			return false;
 		} else {
-			// manually do this instead of using Arrays.equals() to represent number of comparisons properly
-			for (int j = 0; j < _toSearch.length; j++) {
-				if (_toSearch[j] != comp[j])
-					return false;
-			}
+			return Arrays.equals(comp, _toSearch);
 		}
 		return true;
 	}
